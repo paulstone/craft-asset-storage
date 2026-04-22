@@ -156,6 +156,7 @@ class StaticCache extends Component
                         }
                         xhr.open("POST", "' . $ajaxUrl . '", );
                         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
                         xhr.send(JSON.stringify(allBlocks));
                     } else {
                         window.dispatchEvent( new CustomEvent("servd.dynamicloaded", {detail: {blocks: []}}) );
